@@ -19,6 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4134827291246320}
+  - component: {fileID: 114858072327451018}
   m_Layer: 0
   m_Name: ConfigSystem
   m_TagString: Untagged
@@ -39,3 +40,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114858072327451018
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1702409983548872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c16900ebdce2f4ba5af9807097e57cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  launchMode: 1
+  difficultyMode: 0
+  maxBannersOnScreen: 10

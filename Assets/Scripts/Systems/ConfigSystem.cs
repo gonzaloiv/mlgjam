@@ -3,5 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ConfigSystem : Singleton<ConfigSystem> {
+
+    [Header("Settings")]
     public LaunchMode launchMode = LaunchMode.Production;
+    public DifficultyMode difficultyMode = DifficultyMode.Easy;
+
+    [Header("Constants")]
+    public int maxBannersOnScreen = 10;
+
 }
