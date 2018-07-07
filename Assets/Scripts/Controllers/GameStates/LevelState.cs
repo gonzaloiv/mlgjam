@@ -36,6 +36,7 @@ namespace GameStates {
 
         public void OnOpenEvent (BannerData bannerData) {
             gameController.ToGameOverState();
+            Application.OpenURL(ConfigSystem.Instance.gameOverURL);
         }
 
         public void OnWaveEndEvent (bool isNewRound) {

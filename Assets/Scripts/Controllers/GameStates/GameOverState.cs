@@ -12,7 +12,7 @@ namespace GameStates {
             base.Enter();
             ApplyBestScoreSystem();
             titleScreenController.Hide();
-            gameOverScreenController.Show(ScoreService.GetBestScore());
+            gameOverScreenController.Show(play.score);
         }
 
         public override void Exit () {

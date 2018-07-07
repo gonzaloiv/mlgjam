@@ -7,6 +7,7 @@ public class ConfigSystem : Singleton<ConfigSystem> {
     [Header("Settings")]
     public LaunchMode launchMode = LaunchMode.Production;
     public DifficultyMode difficultyMode = DifficultyMode.Easy;
+    public string gameOverURL = "http://averyrealweb.wordpress.com";
 
     [Header("Constants")]
     public int maxBannersOnScreen = 10;

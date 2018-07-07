@@ -16,6 +16,7 @@ public class TutorialController : BaseMonoBehaviour {
     #region Public Behaviour
 
     public override void Init () {
+        base.Init();
         banners.ForEach(banner => banner.Init());
     }
 
@@ -26,6 +27,7 @@ public class TutorialController : BaseMonoBehaviour {
     }
 
     public override void Hide () {
+        base.Hide();
         currentBannerIndex = 0;
     }
 

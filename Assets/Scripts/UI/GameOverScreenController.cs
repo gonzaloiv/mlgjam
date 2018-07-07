@@ -26,9 +26,9 @@ public class GameOverScreenController : BaseMonoBehaviour {
         replayButton.onClick.AddListener(() => ReplayButtonClickEvent.Invoke());
     }
 
-    public void Show (Score score) {
+    public void Show (int value) {
         base.Show();
-        bestScoreText.text = score.value.ToString();
+        bestScoreText.text = value.ToString();
     }
 
     #endregion

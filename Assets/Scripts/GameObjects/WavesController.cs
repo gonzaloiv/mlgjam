@@ -36,6 +36,7 @@ public class WavesController : BaseMonoBehaviour {
     #region Public Behaviour
 
     public override void Init () {
+        base.Init();
         waveControllers.ForEach(waveController => waveController.Init());
     }
 
@@ -46,6 +47,7 @@ public class WavesController : BaseMonoBehaviour {
     }
 
     public override void Hide () {
+        base.Hide();
         waveControllers.ForEach(waveController => waveController.HideBanners());
         StopAllCoroutines();
     }

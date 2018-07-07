@@ -16,6 +16,7 @@ public class BonusBannersController : BaseMonoBehaviour {
     #region Public Behaviour
 
     public override void Init () {
+        base.Init();
         bonusBanners.ForEach(banner => banner.Init());
     }
 
@@ -25,6 +26,7 @@ public class BonusBannersController : BaseMonoBehaviour {
     }
 
     public override void Hide () {
+        base.Hide();
         StopAllCoroutines();
     }
 

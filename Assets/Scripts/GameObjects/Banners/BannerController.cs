@@ -14,7 +14,8 @@ public class BannerController : BaseMonoBehaviour {
     public AnimationData closingAnimationData;
     [SerializeField] private List<Button> adButtons;
     [SerializeField] private List<Button> closeButtons;
-    private int clicksToHide;
+    protected int clicksToHide;
+    protected Vector3 initialPosition;
 
     #endregion
 
@@ -32,9 +33,11 @@ public class BannerController : BaseMonoBehaviour {
 
     public override void Init () {
         base.Init();
+        initialPosition = transform.position;
         if (adButtons != null)
             adButtons.ForEach(button => button.onClick.AddListener(() => OnOpenButtonClick()));
-        InitCloseButtons();
+        if (closeButtons != null)
+            closeButtons.ForEach(button => button.onClick.AddListener(OnCloseButtonClick));
     }
 
     public override void Show () {
@@ -63,19 +66,23 @@ public class BannerController : BaseMonoBehaviour {
         OpenEvent.Invoke(bannerData);
     }
 
-    #endregion
-
-    #region Private Behaviour
-
-    private void InitCloseButtons () {
-        if (closeButtons != null)
-            closeButtons.ForEach(button => button.onClick.AddListener(OnCloseButtonClick));
+    public void InvokeCloseEvent() {
+        CloseEvent.Invoke(bannerData);
     }
 
-    private void ClosingAnimationRoutine (Action onComplete) {
+    #endregion
+
+    #region protected Behaviour
+
+    protected void ClosingAnimationRoutine (Action onComplete) {
         switch (closingAnimationData.type) {
             case AnimationType.Scale:
                 transform.DOScale(Vector3.zero, closingAnimationData.time)
+                    .SetEase(closingAnimationData.ease)
+                    .OnComplete(() => onComplete());
+                break;
+            case AnimationType.Transition:
+                transform.DOMove(Vector3.zero, closingAnimationData.time)
                     .SetEase(closingAnimationData.ease)
                     .OnComplete(() => onComplete());
                 break;
