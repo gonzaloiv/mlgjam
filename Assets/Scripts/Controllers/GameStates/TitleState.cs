@@ -10,7 +10,7 @@ namespace GameStates {
 
         public override void Enter () {
             base.Enter();
-            titleScreenController.Show();
+            titleScreenController.Show(ScoreService.GetBestScore());
         }
 
         public override void Exit () {
@@ -18,8 +18,8 @@ namespace GameStates {
             titleScreenController.Hide();
         }
 
-        public void OnPlayButtonClickEvent() {
-            gameController.ToLevelState();   
+        public void OnPlayButtonClickEvent () {
+            gameController.ToLevelStartState();   
         }
 
         #endregion

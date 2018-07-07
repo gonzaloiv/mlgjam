@@ -7,6 +7,7 @@ public class TitleScreenController : BaseMonoBehaviour {
 
     #region Fields / Properties
 
+    public Text bestScoreText;
     public Button playButton;
 
     #endregion
@@ -23,6 +24,16 @@ public class TitleScreenController : BaseMonoBehaviour {
     public override void Init () {
         base.Init();
         playButton.onClick.AddListener(() => PlayButtonClickEvent.Invoke());
+    }
+
+    public void Show (Score score = null) {
+        base.Show();     
+        if (score != null) {
+            bestScoreText.gameObject.SetActive(true);
+            bestScoreText.text = score.value.ToString();
+        } else {
+            bestScoreText.gameObject.SetActive(false);
+        }
     }
 
     #endregion

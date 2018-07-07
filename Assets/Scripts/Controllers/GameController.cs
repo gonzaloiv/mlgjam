@@ -8,6 +8,7 @@ public class GameController : StateMachine {
     #region Fields / Properties
 
     public ViewController viewController;
+    public TutorialController tutorialController;
     public Game game;
 
     #endregion
@@ -16,6 +17,7 @@ public class GameController : StateMachine {
 
     private void Awake () {
         viewController.Init();
+        tutorialController.Init();
         game = new Game();
         ToTitleState();
     }
@@ -26,6 +28,16 @@ public class GameController : StateMachine {
 
     public void ToTitleState () {
         ChangeState<TitleState>();
+    }
+
+    public void ToLevelStartState () {
+        game.level.Init();
+        game.plays++;
+        if (game.plays <= 1) {
+            ChangeState<TutorialState>();
+        } else {
+            ChangeState<LevelState>();
+        }
     }
 
     public void ToLevelState () {

@@ -4,18 +4,20 @@ using UnityEngine;
 
 namespace GameStates {
 
-    public class LevelState : BaseState {
+    public class TutorialState : BaseState {
 
         #region Public Behaviour
 
         public override void Enter () {
             base.Enter();
             levelScreenController.Show(play);
+            tutorialController.Show();
         }
 
         public override void Exit () {
             base.Exit();
             levelScreenController.Hide();
+            tutorialController.Hide();
         }
 
         public override void Play () {
@@ -24,11 +26,15 @@ namespace GameStates {
         }
 
         public void OnCloseEvent (BannerData bannerData) {
-            play.score += bannerData.score;
+            if (!tutorialController.HasFinished) {
+                tutorialController.Show();
+            } else {
+                gameController.ToLevelState();
+            }
         }
 
         public void OnOpenEvent (BannerData bannerData) {
-            gameController.ToGameOverState();
+            gameController.ToTitleState();
         }
 
         #endregion

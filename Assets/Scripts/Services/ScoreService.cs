@@ -17,14 +17,17 @@ public class ScoreService {
         return JsonUtility.FromJson<Score>(PlayerPrefs.GetString(BEST_SCORE_KEY));
     }
 
-    public static bool SetScore (int value) {
+    public static bool IsBestScore (int value) {
         Score currentBestScore = GetBestScore();
         if (currentBestScore == null || currentBestScore.value <= value) {
-            PlayerPrefs.SetString(BEST_SCORE_KEY, JsonUtility.ToJson(new Score(value, DateTime.Now)));
             return true;
         } else {
             return false;
         }
+    }
+
+    public static void SetScore (int value) {
+        PlayerPrefs.SetString(BEST_SCORE_KEY, JsonUtility.ToJson(new Score(value, DateTime.Now)));
     }
 
     #endregion

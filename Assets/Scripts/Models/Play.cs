@@ -15,4 +15,13 @@ public class Play {
 
     #endregion
 
+    #region Public Behaviour
+
+    public void Init () {
+        this.banners = 0;
+        this.score = 0;
+    }
+
+    #endregion
+
 }

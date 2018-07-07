@@ -52,3 +52,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   viewController: {fileID: 0}
+  tutorialController: {fileID: 0}
+  game:
+    plays: 0
+    level:
+      play:
+        banners: 0
+        score: 0

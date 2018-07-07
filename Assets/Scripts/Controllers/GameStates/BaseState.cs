@@ -17,6 +17,8 @@ namespace GameStates {
         public LevelScreenController levelScreenController;
         public GameOverScreenController gameOverScreenController;
 
+        public TutorialController tutorialController;
+
         public Game game;
 
         #endregion
@@ -25,9 +27,13 @@ namespace GameStates {
 
         private void Awake () {
             this.gameController = GetComponent<GameController>();
+
             this.titleScreenController = gameController.viewController.titleScreenController;
             this.levelScreenController = gameController.viewController.levelScreenController;
             this.gameOverScreenController = gameController.viewController.gameOverScreenController;
+
+            this.tutorialController = gameController.tutorialController;
+
             this.game = gameController.game;
         }
 
