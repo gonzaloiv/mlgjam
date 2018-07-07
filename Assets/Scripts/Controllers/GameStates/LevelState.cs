@@ -31,6 +31,7 @@ namespace GameStates {
         public void OnCloseEvent (BannerData bannerData) {
             play.score += bannerData.score;
             ApplyLastBannerSystem();
+            AudioSystem.Instance.PlayRandomAudioClip(AudioLayer.Success);
         }
 
         public void OnOpenEvent (BannerData bannerData) {

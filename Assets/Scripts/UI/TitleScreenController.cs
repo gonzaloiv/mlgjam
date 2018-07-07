@@ -36,6 +36,10 @@ public class TitleScreenController : BaseMonoBehaviour {
         }
     }
 
+    public void HideBestScoreText() {
+        bestScoreText.gameObject.SetActive(false); 
+    }
+
     #endregion
 
 }

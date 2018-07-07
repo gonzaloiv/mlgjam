@@ -20,6 +20,7 @@ public class TutorialController : BaseMonoBehaviour {
     }
 
     public override void Show () {
+        base.Show();
         banners[currentBannerIndex].Show();
         currentBannerIndex++;
     }

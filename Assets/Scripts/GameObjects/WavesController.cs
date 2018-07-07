@@ -40,6 +40,7 @@ public class WavesController : BaseMonoBehaviour {
     }
 
     public void Show (Level level) {
+        base.Show();
         this.level = level;
         StartCoroutine(WaveRoutine());
     }

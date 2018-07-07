@@ -20,6 +20,7 @@ public class BonusBannersController : BaseMonoBehaviour {
     }
 
     public override void Show () {
+        base.Show();
         StartCoroutine(BonusBannersRoutine());
     }
 

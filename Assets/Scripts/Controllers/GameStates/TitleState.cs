@@ -13,6 +13,11 @@ namespace GameStates {
             titleScreenController.Show(ScoreService.GetBestScore());
         }
 
+        public override void Exit () {
+            base.Exit();
+            titleScreenController.HideBestScoreText();
+        }
+
         public void OnPlayButtonClickEvent () {
             gameController.ToLevelStartState();   
         }

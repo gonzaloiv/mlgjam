@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
+using System;
 
 public class BannerController : BaseMonoBehaviour {
 
@@ -9,6 +11,7 @@ public class BannerController : BaseMonoBehaviour {
 
     [Header("BannerController")]
     public BannerData bannerData;
+    public AnimationData closingAnimationData;
     [SerializeField] private List<Button> adButtons;
     [SerializeField] private List<Button> closeButtons;
     private int clicksToHide;
@@ -36,14 +39,24 @@ public class BannerController : BaseMonoBehaviour {
 
     public override void Show () {
         base.Show();
+        AudioSystem.Instance.PlayRandomAudioClip(AudioLayer.Error);
+        transform.localScale = Vector3.one;
         clicksToHide = closeButtons.Count;
     }
 
+
     public virtual void OnCloseButtonClick () {
         clicksToHide--;
-        if (clicksToHide <= 0)
-            Hide();
-        CloseEvent.Invoke(bannerData);
+        if (closingAnimationData.type != AnimationType.None) {
+            ClosingAnimationRoutine(() => {
+                base.Hide();
+                CloseEvent.Invoke(bannerData);
+            });
+        } else {
+            if (clicksToHide <= 0)
+                base.Hide();
+            CloseEvent.Invoke(bannerData);
+        }
     }
 
     public virtual void OnOpenButtonClick () {
@@ -57,6 +70,16 @@ public class BannerController : BaseMonoBehaviour {
     private void InitCloseButtons () {
         if (closeButtons != null)
             closeButtons.ForEach(button => button.onClick.AddListener(OnCloseButtonClick));
+    }
+
+    private void ClosingAnimationRoutine (Action onComplete) {
+        switch (closingAnimationData.type) {
+            case AnimationType.Scale:
+                transform.DOScale(Vector3.zero, closingAnimationData.time)
+                    .SetEase(closingAnimationData.ease)
+                    .OnComplete(() => onComplete());
+                break;
+        }
     }
 
     #endregion
