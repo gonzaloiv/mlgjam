@@ -15,7 +15,7 @@ namespace GameStates {
 
         public override void Exit () {
             base.Exit();
-            titleScreenController.HideBestScoreText();
+            titleScreenController.HideTitlePanels();
         }
 
         public void OnPlayButtonClickEvent () {

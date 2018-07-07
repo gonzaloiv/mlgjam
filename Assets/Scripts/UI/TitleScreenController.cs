@@ -2,13 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class TitleScreenController : BaseMonoBehaviour {
 
     #region Fields / Properties
 
+    private const int TITLE_Y_MOVE = 300;
+
     public Text bestScoreText;
+    public Image titleImage;
     public Button playButton;
+
+    public Vector3 initialTitlePosition;
 
     #endregion
 
@@ -24,10 +30,12 @@ public class TitleScreenController : BaseMonoBehaviour {
     public override void Init () {
         base.Init();
         playButton.onClick.AddListener(() => PlayButtonClickEvent.Invoke());
+        initialTitlePosition = titleImage.transform.position;
     }
 
     public void Show (Score score = null) {
         base.Show();     
+        ShowTitlePanels();
         if (score != null) {
             bestScoreText.gameObject.SetActive(true);
             bestScoreText.text = score.value.ToString();
@@ -36,8 +44,23 @@ public class TitleScreenController : BaseMonoBehaviour {
         }
     }
 
-    public void HideBestScoreText() {
+    public void HideTitlePanels () {
+        titleImage.transform.DOMove(initialTitlePosition + new Vector3(0, TITLE_Y_MOVE, 0), 0.3f)
+            .SetEase(Ease.InOutBounce);
+        playButton.gameObject.SetActive(false);
         bestScoreText.gameObject.SetActive(false); 
+    }
+
+    #endregion
+
+    #region Private Behavoiur
+
+    private void ShowTitlePanels () {
+        titleImage.transform.localPosition = initialTitlePosition + new Vector3(0, TITLE_Y_MOVE, 0);
+        titleImage.transform.DOMove(initialTitlePosition, 0.3f)
+            .SetEase(Ease.InOutBounce);
+        titleImage.gameObject.SetActive(true);
+        playButton.gameObject.SetActive(true);
     }
 
     #endregion

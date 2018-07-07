@@ -43,7 +43,8 @@ namespace GameStates {
         #region Private Behaviour
 
         private void ApplyBestScoreSystem () {
-            ScoreService.SetScore(play.score);
+            if (ScoreService.IsBestScore(play.score))
+                ScoreService.SetScore(play.score);
         }
 
         #endregion
