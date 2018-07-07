@@ -18,6 +18,7 @@ namespace GameStates {
         public GameOverScreenController gameOverScreenController;
 
         public TutorialController tutorialController;
+        public WavesController wavesController;
 
         public Game game;
 
@@ -33,6 +34,7 @@ namespace GameStates {
             this.gameOverScreenController = gameController.viewController.gameOverScreenController;
 
             this.tutorialController = gameController.tutorialController;
+            this.wavesController = gameController.wavesController;
 
             this.game = gameController.game;
         }

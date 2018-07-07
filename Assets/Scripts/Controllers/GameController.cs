@@ -9,6 +9,7 @@ public class GameController : StateMachine {
 
     public ViewController viewController;
     public TutorialController tutorialController;
+    public WavesController wavesController;
     public Game game;
 
     #endregion
@@ -18,6 +19,7 @@ public class GameController : StateMachine {
     private void Awake () {
         viewController.Init();
         tutorialController.Init();
+        wavesController.Init();
         game = new Game();
         ToTitleState();
     }

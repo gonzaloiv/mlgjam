@@ -10,5 +10,6 @@ public class ConfigSystem : Singleton<ConfigSystem> {
 
     [Header("Constants")]
     public int maxBannersOnScreen = 10;
+    public float roundSpeedRatio = 0.25f;
 
 }

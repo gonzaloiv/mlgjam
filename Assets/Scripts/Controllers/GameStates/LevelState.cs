@@ -10,15 +10,18 @@ namespace GameStates {
 
         public override void Enter () {
             base.Enter();
+            wavesController.Show(level);
             levelScreenController.Show(play);
         }
 
         public override void Exit () {
             base.Exit();
+            wavesController.Hide();
             levelScreenController.Hide();
         }
 
         public override void Play () {
+            play.banners = wavesController.CurrentActiveBannersAmount;
             if (play.IsGameOver)
                 gameController.ToGameOverState();
         }
@@ -31,6 +34,12 @@ namespace GameStates {
             gameController.ToGameOverState();
         }
 
+        public void OnWaveEndEvent (bool isNewRound) {
+            Debug.LogWarning("Round Index: " + level.roundIndex);
+            Debug.LogWarning("Wave Index: " + (level.waveIndex + level.roundIndex * wavesController.TotalWaveControllersAmount));
+            Debug.LogWarning("Is new round? " + isNewRound);
+        }
+
         #endregion
 
         #region Protected Behaviour
@@ -39,12 +48,14 @@ namespace GameStates {
             base.AddListeners();
             BannerController.OpenEvent += OnOpenEvent;
             BannerController.CloseEvent += OnCloseEvent;
+            WavesController.WaveEndEvent += OnWaveEndEvent;
         }
 
         protected override void RemoveListeners () {
             base.RemoveListeners();
             BannerController.OpenEvent -= OnOpenEvent;
             BannerController.CloseEvent -= OnCloseEvent;
+            WavesController.WaveEndEvent -= OnWaveEndEvent;
         }
 
         #endregion
