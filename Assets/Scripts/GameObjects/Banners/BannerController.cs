@@ -9,7 +9,7 @@ public class BannerController : BaseMonoBehaviour {
 
     [Header("BannerController")]
     public BannerData bannerData;
-    [SerializeField] private Button adButton;
+    [SerializeField] private List<Button> adButtons;
     [SerializeField] private List<Button> closeButtons;
     private int clicksToHide;
 
@@ -29,7 +29,8 @@ public class BannerController : BaseMonoBehaviour {
 
     public override void Init () {
         base.Init();
-        adButton.onClick.AddListener(() => OnOpenButtonClick());
+        if (adButtons != null)
+            adButtons.ForEach(button => button.onClick.AddListener(() => OnOpenButtonClick()));
         InitCloseButtons();
     }
 
@@ -39,10 +40,10 @@ public class BannerController : BaseMonoBehaviour {
     }
 
     public virtual void OnCloseButtonClick () {
-        CloseEvent.Invoke(bannerData);
         clicksToHide--;
         if (clicksToHide <= 0)
             Hide();
+        CloseEvent.Invoke(bannerData);
     }
 
     public virtual void OnOpenButtonClick () {

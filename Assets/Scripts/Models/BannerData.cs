@@ -7,4 +7,5 @@ using System;
 public class BannerData {
     public int score;
     public string url;
+    public float activeTime;
 }

@@ -7,7 +7,7 @@ public class WaveController : BaseMonoBehaviour {
 
     #region Fields / Properties
 
-    public float RoundSpwaningTime { get { return waveData.spawningTime / 1 + ConfigSystem.Instance.roundSpeedRatio * level.roundIndex; } }
+    public float RoundSpawningTime { get { return waveData.spawningTime / 1 + ConfigSystem.Instance.roundSpeedRatio * level.roundIndex; } }
 
     public int ActiveBannersAmount { get { return banners.Where(banner => banner.isActiveAndEnabled).Count(); } }
     public List<BannerController> InactiveBanners { get { return banners.Where(banner => !banner.isActiveAndEnabled).ToList(); } }
@@ -31,6 +31,12 @@ public class WaveController : BaseMonoBehaviour {
         StartCoroutine(BannersRoutine());
     }
 
+    public void ShowBanner () {
+        if (InactiveBanners.Count > 0)
+            InactiveBanners[Random.Range(0, InactiveBanners.Count)].Show();
+        spawnTime = Time.time;
+    }
+
     public override void Hide () {
         StopAllCoroutines();
     }
@@ -47,7 +53,7 @@ public class WaveController : BaseMonoBehaviour {
     private IEnumerator BannersRoutine () {
         spawnTime = 0;
         while (gameObject.activeInHierarchy) {
-            if (spawnTime + RoundSpwaningTime <= Time.time) {
+            if (spawnTime + RoundSpawningTime <= Time.time) {
                 if (InactiveBanners.Count > 0)
                     InactiveBanners[Random.Range(0, InactiveBanners.Count)].Show();
                 spawnTime = Time.time;

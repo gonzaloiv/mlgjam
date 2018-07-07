@@ -12,12 +12,14 @@ namespace GameStates {
             base.Enter();
             wavesController.Show(level);
             levelScreenController.Show(play);
+            bonusBannersController.Show();
         }
 
         public override void Exit () {
             base.Exit();
             wavesController.Hide();
             levelScreenController.Hide();
+            bonusBannersController.Hide();
         }
 
         public override void Play () {
@@ -28,6 +30,7 @@ namespace GameStates {
 
         public void OnCloseEvent (BannerData bannerData) {
             play.score += bannerData.score;
+            ApplyLastBannerSystem();
         }
 
         public void OnOpenEvent (BannerData bannerData) {
@@ -56,6 +59,16 @@ namespace GameStates {
             BannerController.OpenEvent -= OnOpenEvent;
             BannerController.CloseEvent -= OnCloseEvent;
             WavesController.WaveEndEvent -= OnWaveEndEvent;
+        }
+
+        #endregion
+
+        #region Private Behaviour
+
+        private void ApplyLastBannerSystem () {
+            Debug.LogWarning("ApplyLastBannerSystem " + wavesController.CurrentActiveBannersAmount);
+            if (wavesController.CurrentActiveBannersAmount == 0)
+                wavesController.CurrentWaveController.ShowBanner();
         }
 
         #endregion

@@ -54,3 +54,4 @@ MonoBehaviour:
   launchMode: 1
   difficultyMode: 0
   maxBannersOnScreen: 10
+  roundSpeedRatio: 0.25

@@ -19,6 +19,7 @@ namespace GameStates {
 
         public TutorialController tutorialController;
         public WavesController wavesController;
+        public BonusBannersController bonusBannersController;
 
         public Game game;
 
@@ -35,6 +36,7 @@ namespace GameStates {
 
             this.tutorialController = gameController.tutorialController;
             this.wavesController = gameController.wavesController;
+            this.bonusBannersController = gameController.bonusBannersController;
 
             this.game = gameController.game;
         }

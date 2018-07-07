@@ -120,7 +120,7 @@ MonoBehaviour:
   bannerData:
     score: 0
     url: 
-  adButtons: {fileID: 114100150533011100}
+  adButton: {fileID: 0}
   closeButtons:
   - {fileID: 114590530592080078}
 --- !u!114 &114392475957366550

@@ -9,5 +9,6 @@ using System;
 public class AnimationData {
     public float strength;
     public float time;
+    public float pauseTime;
     public Ease ease;
 }
