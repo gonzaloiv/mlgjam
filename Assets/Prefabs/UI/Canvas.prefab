@@ -45,7 +45,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1052675288680788
 GameObject:
   m_ObjectHideFlags: 1
@@ -462,7 +462,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1358223757657114
 GameObject:
   m_ObjectHideFlags: 1
@@ -604,7 +604,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1419728186380484
 GameObject:
   m_ObjectHideFlags: 1
@@ -782,7 +782,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1506654867398376
 GameObject:
   m_ObjectHideFlags: 1
@@ -1629,6 +1629,7 @@ MonoBehaviour:
   doubleShake: 1
   animationData:
     type: 0
+    direction: 0
     strength: 0.2
     time: 0.3
     pauseTime: 0.5
@@ -1723,11 +1724,12 @@ MonoBehaviour:
     url: 
     activeTime: 0
   closingAnimationData:
-    type: 1
-    strength: 0
+    type: 2
+    direction: 3
+    strength: 300
     time: 1
     pauseTime: 0
-    ease: 5
+    ease: 4
   adButtons:
   - {fileID: 114973793578353174}
   closeButtons: []
@@ -1817,6 +1819,7 @@ MonoBehaviour:
     activeTime: 1
   closingAnimationData:
     type: 0
+    direction: 0
     strength: 0
     time: 0
     pauseTime: 0
@@ -1855,6 +1858,7 @@ MonoBehaviour:
     activeTime: 1
   closingAnimationData:
     type: 0
+    direction: 0
     strength: 0
     time: 0
     pauseTime: 0
@@ -2127,6 +2131,7 @@ MonoBehaviour:
     activeTime: 1
   closingAnimationData:
     type: 0
+    direction: 0
     strength: 0
     time: 0
     pauseTime: 0
@@ -2151,6 +2156,7 @@ MonoBehaviour:
     activeTime: 0
   closingAnimationData:
     type: 0
+    direction: 0
     strength: 0
     time: 0
     pauseTime: 0
@@ -2176,6 +2182,7 @@ MonoBehaviour:
     activeTime: 1
   closingAnimationData:
     type: 0
+    direction: 0
     strength: 0
     time: 0
     pauseTime: 0
@@ -2255,6 +2262,7 @@ MonoBehaviour:
     activeTime: 0
   closingAnimationData:
     type: 0
+    direction: 0
     strength: 0
     time: 0
     pauseTime: 0
@@ -2264,6 +2272,7 @@ MonoBehaviour:
   - {fileID: 114395495949370540}
   punchAnimationData:
     type: 0
+    direction: 0
     strength: 0.1
     time: 1
     pauseTime: 0
@@ -2395,6 +2404,7 @@ MonoBehaviour:
     activeTime: 0
   closingAnimationData:
     type: 0
+    direction: 0
     strength: 0
     time: 0
     pauseTime: 0
@@ -2449,6 +2459,7 @@ MonoBehaviour:
   doubleShake: 1
   animationData:
     type: 0
+    direction: 0
     strength: 0.2
     time: 0.3
     pauseTime: 0.5
@@ -2703,6 +2714,7 @@ MonoBehaviour:
   doubleShake: 1
   animationData:
     type: 1
+    direction: 0
     strength: 0.1
     time: 1
     pauseTime: 1
@@ -2970,9 +2982,7 @@ MonoBehaviour:
     spawningTime: 3
     waveTime: 30
   banners:
-  - {fileID: 114672252828401566}
-  - {fileID: 114124599445961242}
-  - {fileID: 114654524686290410}
+  - {fileID: 114020514317339620}
 --- !u!114 &114313178146320402
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3055,6 +3065,7 @@ MonoBehaviour:
   doubleShake: 1
   animationData:
     type: 0
+    direction: 0
     strength: 0.2
     time: 0.3
     pauseTime: 0.5
@@ -3109,6 +3120,7 @@ MonoBehaviour:
     activeTime: 0
   closingAnimationData:
     type: 0
+    direction: 0
     strength: 0
     time: 0
     pauseTime: 0
@@ -3118,6 +3130,7 @@ MonoBehaviour:
   - {fileID: 114920575254582648}
   punchAnimationData:
     type: 0
+    direction: 0
     strength: 0.1
     time: 1
     pauseTime: 0
@@ -3136,6 +3149,7 @@ MonoBehaviour:
   doubleShake: 1
   animationData:
     type: 0
+    direction: 0
     strength: 0.2
     time: 0.3
     pauseTime: 0.5
@@ -3174,6 +3188,7 @@ MonoBehaviour:
   doubleShake: 1
   animationData:
     type: 0
+    direction: 0
     strength: 0.2
     time: 0.3
     pauseTime: 0.5
@@ -3355,6 +3370,7 @@ MonoBehaviour:
   doubleShake: 1
   animationData:
     type: 0
+    direction: 0
     strength: 0.2
     time: 0.3
     pauseTime: 0.5
@@ -3373,6 +3389,7 @@ MonoBehaviour:
   doubleShake: 1
   animationData:
     type: 1
+    direction: 0
     strength: 0.1
     time: 1
     pauseTime: 1
@@ -3533,6 +3550,7 @@ MonoBehaviour:
     activeTime: 1
   closingAnimationData:
     type: 0
+    direction: 0
     strength: 0
     time: 0
     pauseTime: 0
@@ -3600,6 +3618,7 @@ MonoBehaviour:
   doubleShake: 1
   animationData:
     type: 0
+    direction: 0
     strength: 0.2
     time: 0.3
     pauseTime: 0.5
@@ -3799,6 +3818,7 @@ MonoBehaviour:
     activeTime: 1
   closingAnimationData:
     type: 0
+    direction: 0
     strength: 0
     time: 0
     pauseTime: 0
@@ -3891,6 +3911,7 @@ MonoBehaviour:
     activeTime: 0
   closingAnimationData:
     type: 0
+    direction: 0
     strength: 0
     time: 0
     pauseTime: 0
@@ -4084,6 +4105,7 @@ MonoBehaviour:
     activeTime: 0
   closingAnimationData:
     type: 0
+    direction: 0
     strength: 0
     time: 0
     pauseTime: 0
@@ -4454,6 +4476,7 @@ MonoBehaviour:
   doubleShake: 1
   animationData:
     type: 0
+    direction: 0
     strength: 0.2
     time: 0.3
     pauseTime: 0.5
@@ -4475,6 +4498,7 @@ MonoBehaviour:
     activeTime: 0
   closingAnimationData:
     type: 1
+    direction: 0
     strength: 0
     time: 0.1
     pauseTime: 0
@@ -4541,6 +4565,7 @@ MonoBehaviour:
     activeTime: 0
   closingAnimationData:
     type: 1
+    direction: 0
     strength: 0
     time: 0.1
     pauseTime: 0
@@ -4652,6 +4677,7 @@ MonoBehaviour:
   doubleShake: 1
   animationData:
     type: 1
+    direction: 0
     strength: 0.1
     time: 1
     pauseTime: 1
@@ -4872,6 +4898,7 @@ MonoBehaviour:
   doubleShake: 1
   animationData:
     type: 0
+    direction: 0
     strength: 0.2
     time: 0.3
     pauseTime: 0.5
@@ -4980,6 +5007,7 @@ MonoBehaviour:
     activeTime: 0
   closingAnimationData:
     type: 0
+    direction: 0
     strength: 0
     time: 0
     pauseTime: 0
@@ -4989,6 +5017,7 @@ MonoBehaviour:
   - {fileID: 114361717063730660}
   punchAnimationData:
     type: 0
+    direction: 0
     strength: 0.1
     time: 1
     pauseTime: 0
@@ -5488,6 +5517,7 @@ MonoBehaviour:
   doubleShake: 1
   animationData:
     type: 0
+    direction: 0
     strength: 0.2
     time: 0.3
     pauseTime: 0.5
@@ -5509,6 +5539,7 @@ MonoBehaviour:
     activeTime: 0
   closingAnimationData:
     type: 0
+    direction: 0
     strength: 0
     time: 0
     pauseTime: 0
@@ -5620,6 +5651,7 @@ MonoBehaviour:
   doubleShake: 1
   animationData:
     type: 0
+    direction: 0
     strength: 0.2
     time: 0.3
     pauseTime: 0.5
@@ -5755,6 +5787,7 @@ MonoBehaviour:
     activeTime: 1
   closingAnimationData:
     type: 0
+    direction: 0
     strength: 0
     time: 0
     pauseTime: 0
@@ -6083,6 +6116,7 @@ MonoBehaviour:
     activeTime: 1
   closingAnimationData:
     type: 0
+    direction: 0
     strength: 0
     time: 0
     pauseTime: 0
@@ -8073,7 +8107,7 @@ RectTransform:
   m_GameObject: {fileID: 1045082837436582}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.99968, y: 0.99968, z: 0.99968}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224973834195140836}
   m_Father: {fileID: 224803165939709840}

@@ -41,23 +41,25 @@ public class BannerController : BaseMonoBehaviour {
     }
 
     public override void Show () {
+        transform.position = initialPosition;
         base.Show();
+        closeButtons.ForEach(button => button.gameObject.SetActive(true));
         AudioSystem.Instance.PlayRandomAudioClip(AudioLayer.Error);
         transform.localScale = Vector3.one;
         clicksToHide = closeButtons.Count;
     }
 
-
     public virtual void OnCloseButtonClick () {
         clicksToHide--;
+        if (clicksToHide > 0)
+            return;
         if (closingAnimationData.type != AnimationType.None) {
             ClosingAnimationRoutine(() => {
                 base.Hide();
                 CloseEvent.Invoke(bannerData);
             });
         } else {
-            if (clicksToHide <= 0)
-                base.Hide();
+            base.Hide();
             CloseEvent.Invoke(bannerData);
         }
     }
@@ -66,7 +68,7 @@ public class BannerController : BaseMonoBehaviour {
         OpenEvent.Invoke(bannerData);
     }
 
-    public void InvokeCloseEvent() {
+    public void InvokeCloseEvent () {
         CloseEvent.Invoke(bannerData);
     }
 
@@ -82,11 +84,25 @@ public class BannerController : BaseMonoBehaviour {
                     .OnComplete(() => onComplete());
                 break;
             case AnimationType.Transition:
-                transform.DOMove(Vector3.zero, closingAnimationData.time)
+                transform.DOMove(GetTransitionPosition(), closingAnimationData.time)
                     .SetEase(closingAnimationData.ease)
                     .OnComplete(() => onComplete());
                 break;
         }
+    }
+
+    protected Vector3 GetTransitionPosition () {
+        switch (closingAnimationData.direction) {
+            case Direction.Up:
+                return new Vector3(0, closingAnimationData.strength, 0); 
+            case Direction.Down:
+                return new Vector3(0, -closingAnimationData.strength, 0); 
+            case Direction.Left:
+                return new Vector3(-closingAnimationData.strength, 0, 0); 
+            case Direction.Right:
+                return new Vector3(closingAnimationData.strength, 0, 0);
+        }
+        return Vector3.zero;
     }
 
     #endregion
