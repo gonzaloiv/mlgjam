@@ -41,8 +41,10 @@ namespace GameStates {
         }
 
         public void OnWaveEndEvent (bool isNewRound) {
-            if (isNewRound)
+            if (isNewRound) {
+                level.roundIndex++;
                 levelScreenController.levelRoundPanelController.Show(level.roundIndex);
+            }
         }
 
         #endregion

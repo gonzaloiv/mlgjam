@@ -19,6 +19,7 @@ public class BannerController : BaseMonoBehaviour {
     [SerializeField] private List<Button> closeButtons;
     protected int clicksToHide;
     protected Vector3 initialPosition;
+    protected Vector3 initialScale;
 
     #endregion
 
@@ -37,6 +38,7 @@ public class BannerController : BaseMonoBehaviour {
     public override void Init () {
         base.Init();
         initialPosition = transform.position;
+        initialScale = transform.localScale;
         if (adButtons != null)
             adButtons.ForEach(button => button.onClick.AddListener(() => OnOpenButtonClick()));
         if (closeButtons != null)
@@ -45,6 +47,7 @@ public class BannerController : BaseMonoBehaviour {
 
     public override void Show () {
         transform.position = initialPosition;
+        transform.localScale = initialScale;
         base.Show();
         closeButtons.ForEach(button => button.gameObject.SetActive(true));
         AudioSystem.Instance.PlayRandomAudioClip(AudioLayer.Error);
@@ -53,7 +56,6 @@ public class BannerController : BaseMonoBehaviour {
 
     public virtual void OnCloseButtonClick () {
         clicksToHide--;
-        Debug.LogWarning(closeButtons.Where(button => button.isActiveAndEnabled).Count());
         if (clicksToHide > 0 && HasActiveCloseButtons)
             return;
         if (closingAnimationData.type != AnimationType.None) {

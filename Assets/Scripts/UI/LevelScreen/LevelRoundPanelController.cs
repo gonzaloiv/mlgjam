@@ -12,6 +12,7 @@ public class LevelRoundPanelController : BaseMonoBehaviour {
 
     public float textTime = 1f;
 
+    [SerializeField] private AudioSource audioSource;
     [SerializeField] private Text roundText;
     [SerializeField] private Text fightText;
 
@@ -40,6 +41,7 @@ public class LevelRoundPanelController : BaseMonoBehaviour {
         HideTexts();
         fightText.gameObject.SetActive(true);
         yield return new WaitForSeconds(textTime);
+        audioSource.Play();
         HideTexts();
     }
 
