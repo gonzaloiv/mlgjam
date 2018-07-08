@@ -7,6 +7,7 @@ public class LevelScreenController : BaseMonoBehaviour {
 
     #region Fields / Properties
 
+    public LevelRoundPanelController levelRoundPanelController;
     [SerializeField] private Text bannersText;
     [SerializeField] private Text scoreText;
 
@@ -27,6 +28,11 @@ public class LevelScreenController : BaseMonoBehaviour {
     #endregion
 
     #region Public Behaviour
+
+    public override void Init () {
+        base.Init();
+        levelRoundPanelController.Init();
+    }
 
     public void Show (Play play) {
         base.Show();

@@ -4,10 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using System;
+using System.Linq;
 
 public class BannerController : BaseMonoBehaviour {
 
     #region Fields / Properties
+
+    public bool HasActiveCloseButtons { get { return closeButtons.Any(button => button.isActiveAndEnabled); } }
 
     [Header("BannerController")]
     public BannerData bannerData;
@@ -45,13 +48,13 @@ public class BannerController : BaseMonoBehaviour {
         base.Show();
         closeButtons.ForEach(button => button.gameObject.SetActive(true));
         AudioSystem.Instance.PlayRandomAudioClip(AudioLayer.Error);
-        transform.localScale = Vector3.one;
         clicksToHide = closeButtons.Count;
     }
 
     public virtual void OnCloseButtonClick () {
         clicksToHide--;
-        if (clicksToHide > 0)
+        Debug.LogWarning(closeButtons.Where(button => button.isActiveAndEnabled).Count());
+        if (clicksToHide > 0 && HasActiveCloseButtons)
             return;
         if (closingAnimationData.type != AnimationType.None) {
             ClosingAnimationRoutine(() => {

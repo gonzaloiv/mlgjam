@@ -13,6 +13,7 @@ namespace GameStates {
             wavesController.Show(level);
             levelScreenController.Show(play);
             bonusBannersController.Show();
+            levelScreenController.levelRoundPanelController.Show(level.roundIndex);
         }
 
         public override void Exit () {
@@ -40,9 +41,8 @@ namespace GameStates {
         }
 
         public void OnWaveEndEvent (bool isNewRound) {
-            Debug.LogWarning("Round Index: " + level.roundIndex);
-            Debug.LogWarning("Wave Index: " + (level.waveIndex + level.roundIndex * wavesController.TotalWaveControllersAmount));
-            Debug.LogWarning("Is new round? " + isNewRound);
+            if (isNewRound)
+                levelScreenController.levelRoundPanelController.Show(level.roundIndex);
         }
 
         #endregion

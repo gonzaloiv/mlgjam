@@ -11,21 +11,24 @@ public class PanelOnEnableScaleBehaviour : MonoBehaviour {
     [SerializeField] float time = 0.3f;
     [SerializeField] Ease ease = Ease.InQuart;
 
+    private Vector3 initialScale;
+
     #endregion
 
     #region Public Behaviour
 
     private void Awake () {
-        transform.localScale = Vector3.zero;
+        initialScale = transform.localScale;
     }
 
     private void OnEnable () {
         transform.localScale = Vector3.zero;
-        transform.DOScale(Vector3.one, time).SetEase(ease);
+        transform.DOScale(Vector3.one, time)
+            .SetEase(ease);
     }
 
     private void OnDisable () {
-        transform.DOScale(Vector3.zero, time).SetEase(ease);
+        transform.localScale = initialScale;
     }
 
     #endregion

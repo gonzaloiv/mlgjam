@@ -23,10 +23,12 @@ public class WaveController : BaseMonoBehaviour {
     #region Fields / Properties
 
     public override void Init () {
+        base.Init();
         banners.ForEach(banner => banner.Init());
     }
 
     public void Show (Level level) {
+        base.Show();
         this.level = level;
         StartCoroutine(BannersRoutine());
     }
@@ -38,6 +40,7 @@ public class WaveController : BaseMonoBehaviour {
     }
 
     public override void Hide () {
+        base.Hide();
         StopAllCoroutines();
     }
 
