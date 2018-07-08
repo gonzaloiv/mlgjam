@@ -3402,7 +3402,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1683589768216974
 GameObject:
   m_ObjectHideFlags: 1
@@ -6888,7 +6888,7 @@ MonoBehaviour:
   time: 0.3
   ease: 13
   direction: 2
-  distance: 200
+  distance: 1000
 --- !u!114 &114103290338507056
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7012,7 +7012,7 @@ MonoBehaviour:
   time: 0.3
   ease: 13
   direction: 0
-  distance: 500
+  distance: 1000
 --- !u!114 &114108588443929398
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7054,7 +7054,7 @@ MonoBehaviour:
   time: 0.6
   ease: 13
   direction: 3
-  distance: 500
+  distance: 1000
 --- !u!114 &114110845003996024
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7266,7 +7266,7 @@ MonoBehaviour:
   time: 0.3
   ease: 13
   direction: 2
-  distance: 200
+  distance: 1000
 --- !u!114 &114122012565149600
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7498,7 +7498,7 @@ MonoBehaviour:
   time: 0.3
   ease: 34
   direction: 0
-  distance: 500
+  distance: 1000
 --- !u!114 &114130219539693634
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8233,7 +8233,7 @@ MonoBehaviour:
   time: 0.3
   ease: 31
   direction: 0
-  distance: 500
+  distance: 1000
 --- !u!114 &114175335910518362
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8248,7 +8248,7 @@ MonoBehaviour:
   time: 0.3
   ease: 13
   direction: 2
-  distance: 500
+  distance: 1000
 --- !u!114 &114175867953991480
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9297,7 +9297,7 @@ MonoBehaviour:
   time: 0.3
   ease: 25
   direction: 3
-  distance: 200
+  distance: 1000
 --- !u!114 &114234509671871020
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9472,7 +9472,7 @@ MonoBehaviour:
   time: 0.3
   ease: 13
   direction: 2
-  distance: 200
+  distance: 1000
 --- !u!114 &114241390088679570
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9528,7 +9528,7 @@ MonoBehaviour:
   time: 0.3
   ease: 25
   direction: 3
-  distance: 200
+  distance: 1000
 --- !u!114 &114250928082581784
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9831,7 +9831,7 @@ MonoBehaviour:
   time: 0.3
   ease: 13
   direction: 1
-  distance: 200
+  distance: 1000
 --- !u!114 &114273383975169526
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11163,7 +11163,7 @@ MonoBehaviour:
   time: 0.3
   ease: 31
   direction: 0
-  distance: 500
+  distance: 1000
 --- !u!114 &114360540755570272
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12111,7 +12111,7 @@ MonoBehaviour:
   time: 0.3
   ease: 13
   direction: 2
-  distance: 500
+  distance: 1000
 --- !u!114 &114418024104246002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12570,7 +12570,7 @@ MonoBehaviour:
   time: 0.3
   ease: 19
   direction: 0
-  distance: 500
+  distance: 1000
 --- !u!114 &114443229529322612
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13646,7 +13646,7 @@ MonoBehaviour:
   time: 0.3
   ease: 31
   direction: 1
-  distance: 200
+  distance: 1000
 --- !u!114 &114507324464349210
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13830,7 +13830,7 @@ MonoBehaviour:
   time: 0.3
   ease: 26
   direction: 2
-  distance: 500
+  distance: 1000
 --- !u!114 &114524131267679104
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14060,7 +14060,7 @@ MonoBehaviour:
   time: 0.3
   ease: 13
   direction: 2
-  distance: 200
+  distance: 1000
 --- !u!114 &114533782066737702
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14248,7 +14248,7 @@ MonoBehaviour:
   time: 0.3
   ease: 25
   direction: 0
-  distance: 200
+  distance: 1000
 --- !u!114 &114539482192208654
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14342,7 +14342,7 @@ MonoBehaviour:
   time: 0.3
   ease: 31
   direction: 0
-  distance: 200
+  distance: 1000
 --- !u!114 &114545171905158728
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16147,7 +16147,7 @@ MonoBehaviour:
   time: 0.3
   ease: 13
   direction: 2
-  distance: 200
+  distance: 1000
 --- !u!114 &114636038595222514
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16486,7 +16486,7 @@ MonoBehaviour:
   time: 0.3
   ease: 25
   direction: 3
-  distance: 200
+  distance: 1000
 --- !u!114 &114661769253963700
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16951,7 +16951,7 @@ MonoBehaviour:
   time: 0.3
   ease: 13
   direction: 2
-  distance: 200
+  distance: 1000
 --- !u!114 &114689623258848028
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17116,7 +17116,7 @@ MonoBehaviour:
   time: 0.3
   ease: 31
   direction: 0
-  distance: 200
+  distance: 1000
 --- !u!114 &114697634285695516
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17218,7 +17218,7 @@ MonoBehaviour:
   time: 0.3
   ease: 13
   direction: 2
-  distance: 500
+  distance: 1000
 --- !u!114 &114699619584940192
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17301,7 +17301,7 @@ MonoBehaviour:
   time: 0.3
   ease: 31
   direction: 3
-  distance: 500
+  distance: 1000
 --- !u!114 &114701886721022342
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17370,7 +17370,7 @@ MonoBehaviour:
   time: 0.3
   ease: 13
   direction: 3
-  distance: 200
+  distance: 1000
 --- !u!114 &114707114205694762
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17518,7 +17518,7 @@ MonoBehaviour:
   time: 0.3
   ease: 13
   direction: 1
-  distance: 200
+  distance: 1000
 --- !u!114 &114715487719488546
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17853,7 +17853,7 @@ MonoBehaviour:
   time: 0.3
   ease: 4
   direction: 0
-  distance: 500
+  distance: 1000
 --- !u!114 &114725061692270206
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -18272,7 +18272,7 @@ MonoBehaviour:
   time: 0.3
   ease: 13
   direction: 2
-  distance: 200
+  distance: 1000
 --- !u!114 &114750023127890910
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -18396,7 +18396,7 @@ MonoBehaviour:
   time: 0.3
   ease: 13
   direction: 2
-  distance: 500
+  distance: 1000
 --- !u!114 &114754181403923904
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -19391,7 +19391,7 @@ MonoBehaviour:
   time: 0.3
   ease: 25
   direction: 0
-  distance: 200
+  distance: 1000
 --- !u!114 &114809053674118976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -19607,7 +19607,7 @@ MonoBehaviour:
   time: 0.3
   ease: 31
   direction: 0
-  distance: 200
+  distance: 1000
 --- !u!114 &114824336949551270
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -19920,7 +19920,7 @@ MonoBehaviour:
   time: 0.3
   ease: 14
   direction: 3
-  distance: 500
+  distance: 1000
 --- !u!114 &114834418817318934
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -20166,7 +20166,7 @@ MonoBehaviour:
   time: 0.3
   ease: 25
   direction: 3
-  distance: 500
+  distance: 1000
 --- !u!114 &114846815968237744
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -20406,7 +20406,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 720, y: 1280}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 2
   m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -20883,7 +20883,7 @@ MonoBehaviour:
   time: 0.3
   ease: 13
   direction: 2
-  distance: 200
+  distance: 1000
 --- !u!114 &114869823477538564
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -21176,7 +21176,7 @@ MonoBehaviour:
   time: 0.3
   ease: 13
   direction: 3
-  distance: 500
+  distance: 1000
 --- !u!114 &114888968772715006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -21577,7 +21577,7 @@ MonoBehaviour:
   time: 0.3
   ease: 25
   direction: 3
-  distance: 200
+  distance: 1000
 --- !u!114 &114910682899516954
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -22055,7 +22055,7 @@ MonoBehaviour:
   time: 0.3
   ease: 25
   direction: 3
-  distance: 200
+  distance: 1000
 --- !u!114 &114925141641535686
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -22871,7 +22871,7 @@ MonoBehaviour:
   time: 0.3
   ease: 13
   direction: 2
-  distance: 200
+  distance: 1000
 --- !u!114 &114958549781818690
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -25623,7 +25623,7 @@ RectTransform:
   m_GameObject: {fileID: 1734498095324310}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.99968, y: 0.99968, z: 0.99968}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224247363665456500}
   - {fileID: 224159678156769892}
@@ -26284,7 +26284,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -620, y: -1180}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224153668737747540
 RectTransform:
@@ -29393,7 +29393,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -250}
+  m_AnchoredPosition: {x: 0, y: -350}
   m_SizeDelta: {x: 500, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224811379492027818
@@ -30340,7 +30340,7 @@ RectTransform:
   m_GameObject: {fileID: 1707894698263110}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.99968, y: 0.99968, z: 0.99968}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224648247931968148}
   m_Father: {fileID: 224150852727655160}
@@ -30348,7 +30348,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 50}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 500, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224973834195140836

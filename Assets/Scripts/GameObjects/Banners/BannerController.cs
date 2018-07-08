@@ -36,9 +36,9 @@ public class BannerController : BaseMonoBehaviour {
     #region Public Behaviour
 
     public override void Init () {
-        initialPosition = transform.position;
-        initialScale = transform.localScale;
         base.Init();
+        initialPosition = transform.localPosition;
+        initialScale = transform.localScale;
         if (adButtons != null)
             adButtons.ForEach(button => button.onClick.AddListener(() => OnOpenButtonClick()));
         if (closeButtons != null)
@@ -46,7 +46,7 @@ public class BannerController : BaseMonoBehaviour {
     }
 
     public override void Show () {
-        transform.position = initialPosition;
+        transform.localPosition = initialPosition;
         transform.localScale = initialScale;
         base.Show();
         closeButtons.ForEach(button => button.gameObject.SetActive(true));
