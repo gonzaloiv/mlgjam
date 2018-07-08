@@ -41,7 +41,6 @@ public class WaveController : BaseMonoBehaviour {
     }
 
     public override void Hide () {
-        base.Hide();
         StopAllCoroutines();
     }
 
