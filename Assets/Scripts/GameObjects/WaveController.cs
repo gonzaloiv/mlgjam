@@ -28,7 +28,8 @@ public class WaveController : BaseMonoBehaviour {
     }
 
     public void Show (Level level) {
-        base.Show();
+        if (!gameObject.activeInHierarchy)
+            base.Show();
         this.level = level;
         StartCoroutine(BannersRoutine());
     }

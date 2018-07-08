@@ -13,6 +13,7 @@ namespace GameStates {
             ApplyBestScoreSystem();
             titleScreenController.Hide();
             gameOverScreenController.Show(play.score);
+            AudioSystem.Instance.PlayAudioClip("gameOver", AudioLayer.Gameplay);
         }
 
         public override void Exit () {

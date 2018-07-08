@@ -21,8 +21,8 @@ public class LevelScreenController : BaseMonoBehaviour {
         if (play == null)
             return;
         scoreText.text = play.score.ToString();
-        bannersText.text = (ConfigSystem.Instance.maxBannersOnScreen - play.banners).ToString();
-        bannersText.gameObject.SetActive(play.banners > 0);
+        bannersText.text = play.banners.ToString();
+        bannersText.transform.parent.gameObject.SetActive(play.banners > 0);
     }
 
     #endregion

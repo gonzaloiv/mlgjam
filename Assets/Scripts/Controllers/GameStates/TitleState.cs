@@ -11,6 +11,7 @@ namespace GameStates {
         public override void Enter () {
             base.Enter();
             titleScreenController.Show(ScoreService.GetBestScore());
+
         }
 
         public override void Exit () {

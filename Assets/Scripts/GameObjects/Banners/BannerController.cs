@@ -36,9 +36,9 @@ public class BannerController : BaseMonoBehaviour {
     #region Public Behaviour
 
     public override void Init () {
-        base.Init();
         initialPosition = transform.position;
         initialScale = transform.localScale;
+        base.Init();
         if (adButtons != null)
             adButtons.ForEach(button => button.onClick.AddListener(() => OnOpenButtonClick()));
         if (closeButtons != null)

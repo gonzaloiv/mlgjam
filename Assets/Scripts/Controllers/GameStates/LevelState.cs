@@ -70,7 +70,6 @@ namespace GameStates {
         #region Private Behaviour
 
         private void ApplyLastBannerSystem () {
-            Debug.LogWarning("ApplyLastBannerSystem " + wavesController.CurrentActiveBannersAmount);
             if (wavesController.CurrentActiveBannersAmount == 0)
                 wavesController.CurrentWaveController.ShowBanner();
         }

@@ -8,7 +8,7 @@ public class TitleScreenController : BaseMonoBehaviour {
 
     #region Fields / Properties
 
-    private const int TITLE_Y_MOVE = 300;
+    private const int TITLE_Y_MOVE = 1000;
 
     public Text bestScoreText;
     public Image titleImage;
@@ -30,7 +30,7 @@ public class TitleScreenController : BaseMonoBehaviour {
     public override void Init () {
         base.Init();
         playButton.onClick.AddListener(() => PlayButtonClickEvent.Invoke());
-        initialTitlePosition = titleImage.transform.position;
+        initialTitlePosition = titleImage.transform.localPosition;
     }
 
     public void Show (Score score = null) {
@@ -45,7 +45,7 @@ public class TitleScreenController : BaseMonoBehaviour {
     }
 
     public void HideTitlePanels () {
-        titleImage.transform.DOMove(initialTitlePosition + new Vector3(0, TITLE_Y_MOVE, 0), 0.3f)
+        titleImage.transform.DOLocalMove(initialTitlePosition + new Vector3(0, TITLE_Y_MOVE, 0), 0.3f)
             .SetEase(Ease.InOutBounce);
         playButton.gameObject.SetActive(false);
         bestScoreText.gameObject.SetActive(false); 
@@ -57,7 +57,7 @@ public class TitleScreenController : BaseMonoBehaviour {
 
     private void ShowTitlePanels () {
         titleImage.transform.localPosition = initialTitlePosition + new Vector3(0, TITLE_Y_MOVE, 0);
-        titleImage.transform.DOMove(initialTitlePosition, 0.3f)
+        titleImage.transform.DOLocalMove(initialTitlePosition, 0.3f)
             .SetEase(Ease.InOutBounce);
         titleImage.gameObject.SetActive(true);
         playButton.gameObject.SetActive(true);

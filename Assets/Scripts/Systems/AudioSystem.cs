@@ -12,6 +12,7 @@ public class AudioSystem : Singleton<AudioSystem> {
     [SerializeField] private List<AudioClip> musicAudioClips;
     [SerializeField] private List<AudioClip> errorAudioClips;
     [SerializeField] private List<AudioClip> successAudioClips;
+    [SerializeField] private List<AudioClip> gameplayAudioClips;
 
     #endregion
 
@@ -71,6 +72,9 @@ public class AudioSystem : Singleton<AudioSystem> {
                 break;
             case AudioLayer.Success:
                 audioClip = successAudioClips.FirstOrDefault(clip => clip.name == audioClipName);
+                break;
+            case AudioLayer.Gameplay:
+                audioClip = gameplayAudioClips.FirstOrDefault(clip => clip.name == audioClipName);
                 break;
         }
         return audioClip;
