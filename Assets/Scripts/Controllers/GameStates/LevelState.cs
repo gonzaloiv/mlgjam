@@ -10,6 +10,7 @@ namespace GameStates {
 
         public override void Enter () {
             base.Enter();
+            
             wavesController.Show(level);
             levelScreenController.Show(play);
             bonusBannersController.Show();

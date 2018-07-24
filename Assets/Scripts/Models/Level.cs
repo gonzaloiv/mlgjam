@@ -18,7 +18,7 @@ public class Level {
 
     public void Init() {
         roundIndex = 0;
-        roundIndex = 0;
+        waveIndex = 0;
         play.Init();
     }
 

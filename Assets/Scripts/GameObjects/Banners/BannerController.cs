@@ -12,14 +12,20 @@ public class BannerController : BaseMonoBehaviour {
 
     public bool HasActiveCloseButtons { get { return closeButtons.Any(button => button.isActiveAndEnabled); } }
 
-    [Header("BannerController")]
+    [Header("Data")]
     public BannerData bannerData;
     public AnimationData closingAnimationData;
+
+    [Header("UI")]
     [SerializeField] private List<Button> adButtons;
     [SerializeField] private List<Button> closeButtons;
     protected int clicksToHide;
-    protected Vector3 initialPosition;
-    protected Vector3 initialScale;
+
+    protected RectTransform rectTransform;
+    protected PanelOnEnableScaleBehaviour panelOnEnableScaleBehaviour;
+    protected PanelOnEnableTransitionBehaviour panelOnEnableTransitionBehaviour;
+    protected Vector2 initialPosition;
+    protected Vector2 initialScale;
 
     #endregion
 
@@ -36,19 +42,32 @@ public class BannerController : BaseMonoBehaviour {
     #region Public Behaviour
 
     public override void Init () {
-        base.Init();
-        initialPosition = transform.localPosition;
-        initialScale = transform.localScale;
+
+        rectTransform = GetComponent<RectTransform>();
+        initialPosition = rectTransform.anchoredPosition;
+        initialScale = rectTransform.localScale;
+
         if (adButtons != null)
             adButtons.ForEach(button => button.onClick.AddListener(() => OnOpenButtonClick()));
         if (closeButtons != null)
             closeButtons.ForEach(button => button.onClick.AddListener(OnCloseButtonClick));
+
+        panelOnEnableScaleBehaviour = GetComponent<PanelOnEnableScaleBehaviour>();
+        if (panelOnEnableScaleBehaviour != null)
+            panelOnEnableScaleBehaviour.Init(rectTransform, initialScale);
+        
+        panelOnEnableTransitionBehaviour = GetComponent<PanelOnEnableTransitionBehaviour>();
+        if (panelOnEnableTransitionBehaviour != null)
+            panelOnEnableTransitionBehaviour.Init(rectTransform, initialPosition);
+
+        base.Init();
+
     }
 
     public override void Show () {
-        transform.localPosition = initialPosition;
-        transform.localScale = initialScale;
         base.Show();
+        rectTransform.anchoredPosition = initialPosition;
+        rectTransform.localScale = initialScale;
         closeButtons.ForEach(button => button.gameObject.SetActive(true));
         AudioSystem.Instance.PlayRandomAudioClip(AudioLayer.Error);
         clicksToHide = closeButtons.Count;

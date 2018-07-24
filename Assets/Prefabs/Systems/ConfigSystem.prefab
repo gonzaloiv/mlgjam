@@ -53,5 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   launchMode: 1
   difficultyMode: 0
+  gameOverURL: https://averyrealweb.wordpress.com
   maxBannersOnScreen: 10
   roundSpeedRatio: 0.25
+  bonusPercentajePerSecond: 5
